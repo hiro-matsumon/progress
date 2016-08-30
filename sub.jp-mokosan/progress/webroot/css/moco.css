@@ -20,3 +20,16 @@ table tr.list-link:hover {
 .pagination ul {
     float: left;
 }
+
+/* 
+ * FLAT-UIのカスタマイズ
+ */
+.title {
+    border-bottom: 1px dotted #bdc3c7;
+}
+
+.footer {
+    background-color: #34495e;
+    color: #ffffff;
+    border-radius: 6px;
+}

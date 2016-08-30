@@ -25,7 +25,7 @@ if (!$this->fetch('title')) {
  */
 if (!$this->fetch('tb_footer')) {
     $this->start('tb_footer');
-    printf('&copy;%s %s', date('Y'), Configure::read('App.title'));
+//    printf('&copy;%s %s', date('Y'), Configure::read('App.title'));
     $this->end();
 }
 
@@ -79,6 +79,7 @@ $this->append('css', $html5Shim);
 
 // カスタマイズCSSを読込み
 $this->append('css', $this->Html->css('/css/moco.css'));
+$this->append('css', $this->Html->css('/css/flat-ui.css'));
 
 /**
  * Prepend `script` block with jQuery and Bootstrap scripts
@@ -87,6 +88,7 @@ $this->prepend('script', $this->Html->script(['//code.jquery.com/jquery.min.js',
 
 // カスタマイズJavascriptを読込み
 $this->append('script', $this->Html->script(['/js/moco.js']));
+$this->append('script', $this->Html->script(['/js/flat-ui.js']));
 
 ?>
 <!DOCTYPE html>

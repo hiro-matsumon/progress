@@ -54,6 +54,8 @@ return [
             'templates' => [APP . 'Template' . DS],
             'locales' => [APP . 'Locale' . DS],
         ],
+        'language' => 'ja',
+        'title' => 'MocoPersons',
     ],
 
     /**
