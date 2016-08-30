@@ -2664,7 +2664,6 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 .pagination li > span {
   display: inline-block;
   background: transparent;
-  border: none;
   border-left: 2px solid #e4e7ea;
   color: #ffffff;
   font-size: 14px;

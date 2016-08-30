@@ -1,11 +1,5 @@
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/mocoPersons">Moco Edit Person</a>
-        </div>
-    </div>
-</nav>
 <div class="container theme-showcase" role="main">
+    <h6 class="title"><?= $title ?></h6>
     <?=
         $this->Form->create($mocoPerson)
     ?>

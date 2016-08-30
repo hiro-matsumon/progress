@@ -44,6 +44,8 @@ class MocoPersonsController extends AppController
      */
     public function add()
     {
+        $this->set('title', '会員登録');
+
         // 入力チェックのためエンティティを設定
         $personEntity = $this->MocoPersons->newEntity();
         $this->set('mocoPerson', $personEntity);
@@ -67,6 +69,8 @@ class MocoPersonsController extends AppController
      */
     public function edit($userId)
     {
+        $this->set('title', '会員編集');
+
         // 入力チェックのためエンティティを設定
         $personEntity = $this->MocoPersons->get($userId);
         $this->set('mocoPerson', $personEntity);
@@ -90,6 +94,8 @@ class MocoPersonsController extends AppController
      */
     public function delete($userId)
     {
+        $this->set('title', '会員削除');
+
         $personEntity = $this->MocoPersons->get($userId);
 
         // 削除処理
@@ -109,6 +115,8 @@ class MocoPersonsController extends AppController
      */
     public function index()
     {
+        $this->set('title', '会員一覧');
+
         $persons = $this->MocoPersons->find('all');
         $this->set('mocoPersons', $this->paginate($persons));
 
@@ -122,6 +130,8 @@ class MocoPersonsController extends AppController
      */
     public function search()
     {
+        $this->set('title', '会員一覧');
+
         // 検索処理
         if ($this->request->is(['post', 'get'])) {
             $condText = $this->request->data('search');

@@ -11,18 +11,7 @@ table tr.list-link:hover {
 }
 
 /* 
- * ページネーションの設定
- */
-.pagination {
-    margin: auto;
-}
-
-.pagination ul {
-    float: left;
-}
-
-/* 
- * FLAT-UIのカスタマイズ
+ * Flat UI デザインのカスタマイズ
  */
 .title {
     border-bottom: 1px dotted #bdc3c7;

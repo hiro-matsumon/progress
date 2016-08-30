@@ -21,11 +21,22 @@ if (!$this->fetch('title')) {
 }
 
 /**
+ * Default `header` block.
+ */
+if (!$this->fetch('tb_header')) {
+    $this->start('tb_header');
+    echo $this->element('header', [
+        'top' => Configure::read('App.title'),
+    ]);
+    $this->end();
+}
+
+/**
  * Default `footer` block.
  */
 if (!$this->fetch('tb_footer')) {
     $this->start('tb_footer');
-//    printf('&copy;%s %s', date('Y'), Configure::read('App.title'));
+    echo $this->element('footer');
     $this->end();
 }
 
@@ -108,6 +119,7 @@ $this->append('script', $this->Html->script(['/js/flat-ui.js']));
 
     <?php
     echo $this->fetch('tb_body_start');
+    echo $this->fetch('tb_header');
     echo $this->fetch('tb_flash');
     echo $this->fetch('content');
     echo $this->fetch('tb_footer');

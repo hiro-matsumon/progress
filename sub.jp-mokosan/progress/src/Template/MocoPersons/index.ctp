@@ -1,37 +1,5 @@
-<?php
-/* @var $this \Cake\View\View */
-use Cake\Core\Configure;
-?>
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-      <span class="sr-only">Toggle navigation</span>
-    </button>
-    <a class="navbar-brand" href="#"><?= Configure::read('App.title') ?></a>
-  </div>
-  <div class="collapse navbar-collapse" id="navbar-collapse-01">
-    <ul class="nav navbar-nav">
-        <li class="nav-divider"></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Help</a></li>
-    </ul>
-    <form class="navbar-form navbar-right" action="#" role="search">
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
-          <span class="input-group-btn">
-            <button type="submit" class="btn"><span class="fui-search"></span></button>
-          </span>
-        </div>
-      </div>
-    </form>
-  </div><!-- /.navbar-collapse -->
-</nav><!-- /navbar -->
-
 <div class="container theme-showcase" role="main">
-    <h4 class="title"><?= Configure::read('App.title') ?> Index</h4>
+    <h6 class="title"><?= $title ?></h6>
     <?= $this->Form->create(null, [
             'url' => '/mocoPersons/search',
         ])
@@ -77,21 +45,6 @@ use Cake\Core\Configure;
         <?php endforeach; ?>
         </tbody>
         </table>
-        <nav>
-            <div>
-                全 <?= $this->Paginator->param('count'); ?> 件
-            </div>
-            <ul class="pagination">
-                <?= $this->Paginator->prev('<< ' . __('')); ?>
-                <?= $this->Paginator->numbers(); ?>
-                <?= $this->Paginator->next(__('') . ' >>'); ?>
-            </ul>
-        </nav>
+        <?= $this->element('pagination') ?>
     </div>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p><small>Copyright &copy;2016 by H.Matsuda. All rights reserved.</small></p>
-    </div>
-</footer>
