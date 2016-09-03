@@ -6,6 +6,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Exception\MocoPersonsDBException;
 
 /**
  * MocoPersons アプリケーション コントローラ
@@ -21,6 +22,20 @@ class MocoPersonsController extends AppController
      */
     public $paginate = [
         'limit' => 5,
+    ];
+
+    /**
+     * メッセージ
+     *
+     * @var array
+     */
+    private $message = [
+        "addSuccess" => "会員を登録しました。",
+        "addError" => "会員の登録に失敗しました。",
+        "editSuccess" => "会員情報を変更しました。",
+        "editError" => "会員情報の更新に失敗しました。",
+        "deleteSuccess" => "会員を削除しました。",
+        "deleteError" => "会員の削除に失敗しました。",
     ];
 
     /**
@@ -50,15 +65,26 @@ class MocoPersonsController extends AppController
         $personEntity = $this->MocoPersons->newEntity();
         $this->set('mocoPerson', $personEntity);
 
-        // 登録処理
-        if ($this->request->is('post')) {
-            $person = $this->MocoPersons->patchEntity($personEntity, $this->request->data);
-            if ($this->MocoPersons->save($person)) {
-                return $this->redirect(['action' => 'index']);
-            }
-        } else {
+        // パラメータチェック
+        if (! $this->request->is('post')) {
             return $this->render();
         }
+        // 登録処理
+        $person = $this->MocoPersons->patchEntity($personEntity, $this->request->data);
+        $result = $this->MocoPersons->save($person);
+
+        // バリデーションエラー
+        if (! $result && $person->errors()) {
+            return $this->render();
+        }
+        // データベースエラー
+        if (! $result) {
+            throw new MocoPersonsDBException($this->message['addError']);
+        }
+        // 成功
+        $this->Flash->success($this->message['addSuccess']);
+
+        return $this->redirect(['action' => 'index']);
     }
 
     /**
@@ -75,15 +101,26 @@ class MocoPersonsController extends AppController
         $personEntity = $this->MocoPersons->get($userId);
         $this->set('mocoPerson', $personEntity);
 
-        // 更新処理
-        if ($this->request->is(['post', 'put'])) {
-            $person = $this->MocoPersons->patchEntity($personEntity, $this->request->data);
-            if ($this->MocoPersons->save($person)) {
-                return $this->redirect(['action' => 'index']);
-            }
-        } else {
+        // パラメータチェック
+        if (! $this->request->is(['post', 'put'])) {
             return $this->render();
         }
+        // 更新処理
+        $person = $this->MocoPersons->patchEntity($personEntity, $this->request->data);
+        $result = $this->MocoPersons->save($person);
+
+        // バリデーションエラー
+        if (! $result && $person->errors()) {
+            return $this->render();
+        }
+        // データベースエラー
+        if (! $result) {
+            throw new MocoPersonsDBException($this->message['editError']);
+        }
+        // 成功
+        $this->Flash->success($this->message['editSuccess']);
+
+        return $this->redirect(['action' => 'index']);
     }
 
     /**
@@ -98,14 +135,20 @@ class MocoPersonsController extends AppController
 
         $personEntity = $this->MocoPersons->get($userId);
 
-        // 削除処理
-        if ($this->request->is(['post', 'put'])) {
-            if ($this->MocoPersons->delete($personEntity)) {
-                return $this->redirect(['action' => 'index']);
-            }
+        // パラメータチェック
+        if (! $this->request->is(['post', 'put'])) {
+            return $this->render();
         }
+        // 削除処理
+        $result = $this->MocoPersons->delete($personEntity);
+        // データベースエラー
+        if (! $result) {
+            throw new MocoPersonsDBException($this->message['deleteError']);
+        }
+        // 成功
+        $this->Flash->success($this->message['deleteSuccess']);
 
-        return $this->render();
+        return $this->redirect(['action' => 'index']);
     }
 
     /**

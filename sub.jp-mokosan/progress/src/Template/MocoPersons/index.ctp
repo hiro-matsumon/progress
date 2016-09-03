@@ -1,3 +1,4 @@
+<?= $this->Flash->render() ?>
 <div class="container theme-showcase" role="main">
     <h6 class="title"><?= $title ?></h6>
     <?= $this->Form->create(null, [

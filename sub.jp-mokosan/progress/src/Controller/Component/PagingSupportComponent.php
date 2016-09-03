@@ -31,7 +31,7 @@ class PagingSupportComponent extends Component
         $this->requestData = $request->data;
 
         // ページ遷移有無
-        $this->isPaging = isset($request->query) ? true : false;
+        $this->isPaging = isset($request->query['page']) ? true : false;
 
         // セッション名
         $controllerName = $request->params['controller'];
