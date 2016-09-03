@@ -13,8 +13,4 @@ use Cake\Core\Exception\Exception as CakeException;
  */
 class MocoPersonsDBException extends CakeException
 {
-    public function __construct($message, $code = 500, $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
 }

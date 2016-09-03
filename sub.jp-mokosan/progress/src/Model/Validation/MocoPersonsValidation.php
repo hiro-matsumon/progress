@@ -50,5 +50,4 @@ class MocoPersonsValidation extends Validation
         "isUnique" => "この{0}はすでに使用されています。",
         "mismatch" => "{0}が{1}と一致しません。",
     ];
-
 }
