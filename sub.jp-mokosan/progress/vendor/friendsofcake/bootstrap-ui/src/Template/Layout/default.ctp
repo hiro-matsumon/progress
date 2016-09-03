@@ -100,6 +100,7 @@ $this->prepend('script', $this->Html->script(['//code.jquery.com/jquery.min.js',
 // カスタマイズJavascriptを読込み
 $this->append('script', $this->Html->script(['/js/moco.js']));
 $this->append('script', $this->Html->script(['/js/flat-ui.js']));
+$this->append('script', $this->Html->script(['/js/application.js']));
 
 ?>
 <!DOCTYPE html>
