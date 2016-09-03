@@ -20,5 +20,8 @@ table tr.list-link:hover {
 .footer {
     background-color: #34495e;
     color: #ffffff;
-    border-radius: 6px;
+}
+
+.navbar {
+    border-radius: initial;
 }
