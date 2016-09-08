@@ -1,6 +1,6 @@
-/* 
- * ロゴ用CSS
- */
+/* ============================= *
+ * ロゴ用 StyleSheet
+ * ============================= */
 .logo {
     color: #dcdce2;
     position: absolute;
@@ -8,12 +8,7 @@
     left: 0%;
     margin-left: 0px;
     margin-top: 0px;
-//    width: 80px;
-//    height: 80px;
     text-align: center;
-    font-family: 'Times New Roman', sans-serif;
-    font-size: 22.5px;
-//    line-height: 180px;
     -webkit-font-smoothing: antialiased;
 }
 .logo:after,
@@ -21,52 +16,23 @@
     content: "";
     border-radius: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
     transform-origin: center center;
 }
 .logo:after {
-    box-shadow: inset 0 11.25px 0 rgba(250, 250, 0, 0.8), inset 11.25px 0 0 rgba(250, 200, 0, 0.8), inset 0 -11.25px 0 rgba(250, 150, 0, 0.8), inset -11.25px 0 0 rgba(250, 100, 0, 0.8);
+    box-shadow: inset 0 5.25px 0 rgba(250, 250, 0, 0.8), inset 5.25px 0 0 rgba(250, 200, 0, 0.8), inset 0 -5.25px 0 rgba(250, 150, 0, 0.8), inset -5.25px 0 0 rgba(250, 100, 0, 0.8);
     animation: rotar 3.5s linear infinite;
 }
 .logo:before {
-    box-shadow: inset 0 11.25px 0 rgba(0, 250, 250, 0.8), inset 11.25px 0 0 rgba(0, 200, 200, 0.8), inset 0 -11.25px 0 rgba(0, 150, 200, 0.8), inset -11.25px 0 0 rgba(0, 200, 250, 0.8);
+    box-shadow: inset 0 5.25px 0 rgba(0, 250, 250, 0.8), inset 5.25px 0 0 rgba(0, 200, 200, 0.8), inset 0 -5.25px 0 rgba(0, 150, 200, 0.8), inset -5.25px 0 0 rgba(0, 200, 250, 0.8);
     animation: rotarIz 3.5s linear infinite;
 }
-.contenedor {
-    color: #dcdce2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: 10px;
-    margin-top: -90px;
-    width: 180px;
-    height: 180px;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+.navbar-nav > li > a.logo {
+    font-family: 'Times New Roman', sans-serif;
     font-size: 22.5px;
-    line-height: 180px;
-    -webkit-font-smoothing: antialiased;
-}
-.borderUno,
-.borderDos {
-    border-radius: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: center center;
-}
-.borderUno {
-    box-shadow: inset 0 11.25px 0 rgba(100, 250, 50, 0.8), inset 11.25px 0 0 rgba(50, 200, 150, 0.8), inset 0 -11.25px 0 rgba(150, 150, 0, 0.8), inset -11.25px 0 0 rgba(250, 50, 0, 0.8);
-    animation: rotar 1.5s linear infinite;
-}
-.borderDos {
-    box-shadow: inset 0 11.25px 0 rgba(0, 250, 250, 0.8), inset 11.25px 0 0 rgba(0, 200, 200, 0.8), inset 0 -11.25px 0 rgba(50, 150, 200, 0.8), inset -11.25px 0 0 rgba(50, 200, 250, 0.8);
-    animation: rotarIz 1.5s linear infinite;
 }
 @keyframes rotar {
     0% {
