@@ -25,3 +25,17 @@ table tr.list-link:hover {
 .navbar {
     border-radius: initial;
 }
+
+.pagination li > a,
+.pagination li > span {
+    border: initial;
+}
+
+.navbar-collapse.collapse {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-nav > li > a {
+    padding: 20px 21px;
+}

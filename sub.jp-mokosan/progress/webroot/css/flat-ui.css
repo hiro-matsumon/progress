@@ -2664,6 +2664,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 .pagination li > span {
   display: inline-block;
   background: transparent;
+  border: none;
   border-left: 2px solid #e4e7ea;
   color: #ffffff;
   font-size: 14px;
@@ -4056,6 +4057,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   min-height: 53px;
   margin-bottom: 30px;
   border: none;
+  border-radius: 6px;
 }
 @media (min-width: 768px) {
   .navbar-header {

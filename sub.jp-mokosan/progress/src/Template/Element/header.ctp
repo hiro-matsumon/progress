@@ -3,11 +3,11 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
             <span class="sr-only">Toggle navigation</span>
         </button>
-        <a class="navbar-brand" href="/mocoPersons/"><?= $top ?></a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">
             <li class="nav-divider"></li>
+            <li><a href="/mocoPersons/" class="logo">M</a></li>
             <li><a href="/mocoPersons/">Dashboard</a></li>
             <li><a href="/mocoPersons/">Settings</a></li>
             <li><a href="/mocoPersons/">Profile</a></li>

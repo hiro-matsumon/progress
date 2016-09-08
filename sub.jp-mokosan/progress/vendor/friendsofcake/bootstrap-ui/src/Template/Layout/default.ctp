@@ -89,8 +89,10 @@ $this->prepend('css', $this->Html->css(['//maxcdn.bootstrapcdn.com/bootstrap/3.3
 $this->append('css', $html5Shim);
 
 // カスタマイズCSSを読込み
-$this->append('css', $this->Html->css('/css/moco.css'));
 $this->append('css', $this->Html->css('/css/flat-ui.css'));
+$this->append('css', $this->Html->css('/css/logo.css'));
+$this->append('css', $this->Html->css('//fonts.googleapis.com/css?family=Open+Sans:700'));
+$this->append('css', $this->Html->css('/css/moco.css'));
 
 /**
  * Prepend `script` block with jQuery and Bootstrap scripts
