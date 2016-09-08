@@ -65,7 +65,7 @@ class MocoPersonsController extends AppController
         $personEntity = $this->MocoPersons->newEntity();
         $this->set('mocoPerson', $personEntity);
 
-        // パラメータチェック
+        // モード判定
         if (! $this->request->is('post')) {
             return $this->render();
         }
@@ -93,7 +93,7 @@ class MocoPersonsController extends AppController
      * @param int $userId 会員ID
      * @return \Cake\Network\Request indexアクション
      */
-    public function edit($userId)
+    public function edit($userId = null)
     {
         $this->set('title', '会員編集');
 
@@ -101,7 +101,7 @@ class MocoPersonsController extends AppController
         $personEntity = $this->MocoPersons->get($userId);
         $this->set('mocoPerson', $personEntity);
 
-        // パラメータチェック
+        // モード判定
         if (! $this->request->is(['post', 'put'])) {
             return $this->render();
         }
@@ -129,13 +129,13 @@ class MocoPersonsController extends AppController
      * @param int $userId 会員ID
      * @return \Cake\Network\Request indexアクション
      */
-    public function delete($userId)
+    public function delete($userId = null)
     {
         $this->set('title', '会員削除');
 
         $personEntity = $this->MocoPersons->get($userId);
 
-        // パラメータチェック
+        // モード判定
         if (! $this->request->is(['post', 'put'])) {
             return $this->render();
         }
