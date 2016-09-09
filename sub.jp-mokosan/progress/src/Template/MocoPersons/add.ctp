@@ -23,8 +23,8 @@
             ])
         ?>
     </fieldset>
-    <?= $this->Form->submit('登録', [
-            'class' => 'btn btn-primary',
+    <?= $this->Form->button('&#xf00c; 登録', [
+            'class' => 'btn btn-primary i-button',
         ])
     ?>
     <?= $this->form->end() ?>
