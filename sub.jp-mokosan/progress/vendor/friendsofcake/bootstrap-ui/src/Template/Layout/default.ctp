@@ -70,6 +70,8 @@ if (!$this->fetch('tb_body_end')) {
  */
 $this->prepend('meta', $this->Html->meta('author', null, ['name' => 'author', 'content' => Configure::read('App.author')]));
 $this->prepend('meta', $this->Html->meta('favicon.ico', '/favicon.ico', ['type' => 'icon']));
+// カスタマイズmetaタグを読込み
+$this->append('meta', $this->Html->meta('viewport', 'width=device-width,initial-scale=1'));
 
 /**
  * Prepend `css` block with Bootstrap stylesheets and append

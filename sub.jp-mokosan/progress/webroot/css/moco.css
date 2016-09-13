@@ -109,9 +109,22 @@ table tr.list-link:hover {
 /* ============================= *
  * デザイン (ページネーション)
  * ============================= */
+.pagination {
+    padding: initial;
+}
 .pagination li > a,
 .pagination li > span {
     border: initial;
+    padding: 10px 20px;
+}
+.pagination li.next, .pagination li.previous {
+    position: relative;
+}
+.pagination li.previous > a {
+    border-right: initial;
+}
+.pagination > li > a {
+    margin-left: 0px;
 }
 /* ============================= *
  * レイアウト
@@ -131,9 +144,13 @@ table tr.list-link:hover {
 }
 @media (max-width: 767px) {
     .navbar-nav > li > a {
-        padding-top: 13px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }
 .footer {
     margin-top: 20px;
+}
+.table-responsive {
+    margin-top: 15px;
 }

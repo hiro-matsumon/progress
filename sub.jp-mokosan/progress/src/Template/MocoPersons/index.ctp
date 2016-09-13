@@ -18,10 +18,12 @@
         ?>
         <?= $this->Form->end() ?>
     </fieldset>
-    <div class="table-responsive">
+    <fieldset>
         <div class="pull-right">
             <a href="/mocoPersons/add" class="btn btn-danger i-button">&#xf234; 会員登録</a>
         </div>
+    </fieldset>
+    <div class="table-responsive">
         <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -46,6 +48,6 @@
         <?php endforeach; ?>
         </tbody>
         </table>
-        <?= $this->element('pagination') ?>
     </div>
+    <?= $this->element('pagination') ?>
 </div>
