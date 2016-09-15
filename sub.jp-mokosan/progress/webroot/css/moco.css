@@ -154,3 +154,30 @@ table tr.list-link:hover {
 .table-responsive {
     margin-top: 15px;
 }
+.alert-success {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+/* ============================= *
+ * アニメーション
+ * ============================= */
+.fade.in {
+    animation: fadeInOut 5s ease 0s 1 normal;
+    -webkit-animation: fadeInOut 5s ease 0s 1 normal;
+}
+@keyframes fadeInOut {
+    0% {opacity: 0}
+    35% {opacity: 1}
+    100% {opacity: 0}
+}
+@-webkit-keyframes fadeInOut {
+    0% {opacity: 0}
+    35% {opacity: 1}
+    100% {opacity: 0}
+}
+.table-responsive {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
