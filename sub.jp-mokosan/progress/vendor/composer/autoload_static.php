@@ -47,6 +47,7 @@ class ComposerStaticInitf91ab1406e100476a2ccd3b862e488c8
         ),
         'M' => 
         array (
+            'Monolog\\' => 8,
             'Migrations\\' => 11,
         ),
         'D' => 
@@ -126,6 +127,10 @@ class ComposerStaticInitf91ab1406e100476a2ccd3b862e488c8
         'Phinx\\' => 
         array (
             0 => __DIR__ . '/..' . '/robmorgan/phinx/src/Phinx',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Migrations\\' => 
         array (
