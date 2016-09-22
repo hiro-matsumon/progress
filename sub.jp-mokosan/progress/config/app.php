@@ -235,7 +235,7 @@ return [
             'timezone' => 'UTC',
             'flags' => [],
             'cacheMetadata' => true,
-            'log' => false,
+            'log' => true,
 
             /**
              * Set identifier quoting to true if you are using reserved words or
@@ -291,6 +291,7 @@ return [
             'file' => 'debug',
             'levels' => ['notice', 'info', 'debug'],
             'url' => env('LOG_DEBUG_URL', null),
+            'scopes' => false,
         ],
         'error' => [
             'className' => 'Cake\Log\Engine\FileLog',
@@ -298,6 +299,12 @@ return [
             'file' => 'error',
             'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
             'url' => env('LOG_ERROR_URL', null),
+        ],
+        'queries' => [
+            'className' => 'Cake\Log\Engine\FileLog',
+            'path' => LOGS,
+            'file' => 'queries',
+            'scopes' => ['queriesLog'],
         ],
     ],
 
