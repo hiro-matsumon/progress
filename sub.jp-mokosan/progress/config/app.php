@@ -275,7 +275,7 @@ return [
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
-            'log' => false,
+            'log' => true,
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
             'url' => env('DATABASE_TEST_URL', null),
         ],
@@ -291,7 +291,6 @@ return [
             'file' => 'debug',
             'levels' => ['notice', 'info', 'debug'],
             'url' => env('LOG_DEBUG_URL', null),
-            'scopes' => false,
         ],
         'error' => [
             'className' => 'Cake\Log\Engine\FileLog',
@@ -299,12 +298,6 @@ return [
             'file' => 'error',
             'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
             'url' => env('LOG_ERROR_URL', null),
-        ],
-        'queries' => [
-            'className' => 'Cake\Log\Engine\FileLog',
-            'path' => LOGS,
-            'file' => 'queries',
-            'scopes' => ['queriesLog'],
         ],
     ],
 

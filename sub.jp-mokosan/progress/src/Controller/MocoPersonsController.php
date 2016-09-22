@@ -7,6 +7,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model\Exception\MocoPersonsDBException;
+use Cake\Log\Log;
 
 /**
  * MocoPersons アプリケーション コントローラ

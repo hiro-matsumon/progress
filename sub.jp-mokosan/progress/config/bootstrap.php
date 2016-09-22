@@ -63,6 +63,9 @@ use Cake\Network\Request;
 use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 /**
  * Read configuration file and inject configuration into various
@@ -150,6 +153,22 @@ Email::config(Configure::consume('Email'));
 Log::config(Configure::consume('Log'));
 Security::salt(Configure::consume('Security.salt'));
 
+// Monolog設定
+Log::config('default', function () {
+    $loggingPath = LOGS . DS . 'debug.log';
+    $log = new Logger('app');
+
+    $output = "[%datetime%] %level_name% : %message% %context% %extra%\n";
+    $formatter = new LineFormatter($output, 'Y/m/d H:i:s');
+    $stream = new StreamHandler($loggingPath, Logger::DEBUG);
+    $stream->setFormatter($formatter);
+    $log->pushHandler($stream);
+
+    return $log;
+});
+Log::drop('debug');
+Log::drop('error');
+
 /**
  * The default crypto extension in 3.0 is OpenSSL.
  * If you are migrating from 2.x uncomment this code to
@@ -162,10 +181,12 @@ Security::salt(Configure::consume('Security.salt'));
  */
 Request::addDetector('mobile', function ($request) {
     $detector = new \Detection\MobileDetect();
+
     return $detector->isMobile();
 });
 Request::addDetector('tablet', function ($request) {
     $detector = new \Detection\MobileDetect();
+
     return $detector->isTablet();
 });
 
