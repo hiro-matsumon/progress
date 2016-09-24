@@ -56,7 +56,7 @@ class PaginatorHelper extends \Cake\View\Helper\PaginatorHelper
 
         $options += [
             'class' => $class,
-            'after' => '</li>',
+//            'after' => '</li>',
             'size' => null,
         ];
 
@@ -66,9 +66,9 @@ class PaginatorHelper extends \Cake\View\Helper\PaginatorHelper
             $options['class'] .= " {$class}-{$options['size']}";
         }
 
-        $options += [
-            'before' => '<li class="' . $options['class'] . '">',
-        ];
+//        $options += [
+//            'before' => '<li class="' . $options['class'] . '">',
+//        ];
 
         unset($options['class'], $options['size']);
 

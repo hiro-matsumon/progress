@@ -12,3 +12,13 @@ jQuery( function($) {
         });
     });
 });
+
+/* 
+ * 完了メッセージ
+ */
+$(function() {
+    $('.fade.in').bind('AnimationEnd webkitAnimationEnd', function() {
+        $('.alert-success').hide();
+    });
+});
+

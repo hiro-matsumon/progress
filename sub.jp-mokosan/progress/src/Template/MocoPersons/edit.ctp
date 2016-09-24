@@ -24,8 +24,8 @@
         ?>
     </fieldset>
     <div class="form-group">
-        <?= $this->Form->submit('編集', [
-                'class' => 'btn btn-primary',
+        <?= $this->Form->button('&#xf00c; 編集', [
+                'class' => 'btn btn-primary i-button',
             ])
         ?>
     </div>
@@ -38,8 +38,8 @@
         ])
     ?>
     <div class="form-group">
-        <?= $this->Form->submit('削除', [
-                'class' => 'btn btn-danger',
+        <?= $this->Form->button('&#xf235; 削除', [
+                'class' => 'btn btn-danger i-button',
             ])
         ?>
     </div>

@@ -70,6 +70,8 @@ if (!$this->fetch('tb_body_end')) {
  */
 $this->prepend('meta', $this->Html->meta('author', null, ['name' => 'author', 'content' => Configure::read('App.author')]));
 $this->prepend('meta', $this->Html->meta('favicon.ico', '/favicon.ico', ['type' => 'icon']));
+// カスタマイズmetaタグを読込み
+$this->append('meta', $this->Html->meta('viewport', 'width=device-width,initial-scale=1'));
 
 /**
  * Prepend `css` block with Bootstrap stylesheets and append
@@ -89,8 +91,10 @@ $this->prepend('css', $this->Html->css(['//maxcdn.bootstrapcdn.com/bootstrap/3.3
 $this->append('css', $html5Shim);
 
 // カスタマイズCSSを読込み
-$this->append('css', $this->Html->css('/css/moco.css'));
 $this->append('css', $this->Html->css('/css/flat-ui.css'));
+$this->append('css', $this->Html->css('/css/font-awesome.css'));
+$this->append('css', $this->Html->css('/css/logo.css'));
+$this->append('css', $this->Html->css('/css/moco.css'));
 
 /**
  * Prepend `script` block with jQuery and Bootstrap scripts

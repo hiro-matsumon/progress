@@ -12,16 +12,18 @@
                 'placeholder' => '検索する名前もしくはEメールを入力',
             ])
         ?>
-        <?= $this->Form->submit('検索', [
-                'class' => 'btn btn-primary',
+        <?= $this->Form->button('&#xf002; 検索', [
+                'class' => 'btn btn-primary i-button',
             ])
         ?>
         <?= $this->Form->end() ?>
     </fieldset>
-    <div class="table-responsive">
+    <fieldset>
         <div class="pull-right">
-            <a href="/mocoPersons/add" class="btn btn-danger">新規登録</a>
+            <a href="/mocoPersons/add" class="btn btn-danger i-button">&#xf234; 会員登録</a>
         </div>
+    </fieldset>
+    <div class="table-responsive">
         <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -46,6 +48,6 @@
         <?php endforeach; ?>
         </tbody>
         </table>
-        <?= $this->element('pagination') ?>
     </div>
+    <?= $this->element('pagination') ?>
 </div>
