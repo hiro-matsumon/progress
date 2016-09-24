@@ -16,7 +16,7 @@ use Cake\Log\Log;
 class AccessLogComponent extends Component
 {
 
-    private $logFormat = '<%s> %s::%s (%s) %s';
+    private $logFormat = '<%s> %s::%s (%s) GET%s POST%s';
     private $logScope = 'accessLog';
 
     /**
@@ -33,7 +33,8 @@ class AccessLogComponent extends Component
         $controllerName = $request->params['controller']; // コントローラ
         $actionName = $request->params['action']; // アクション
         $status = $event->subject()->response->statusCode(); // ステータスコード
-        $data = $request->data; // リクエスト
+        $query = $request->query; // GETリクエスト
+        $data = $request->data; // POSTリクエスト
 
         // アクセスログを記録
         $logMessage = sprintf(
@@ -42,6 +43,7 @@ class AccessLogComponent extends Component
             $controllerName,
             $actionName,
             $status,
+            json_encode($query, JSON_UNESCAPED_UNICODE),
             json_encode($data, JSON_UNESCAPED_UNICODE)
         );
         Log::info($logMessage, $this->logScope);
