@@ -64,6 +64,9 @@ use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\FingersCrossedHandler;
+use Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy;
+use Monolog\Handler\RotatingFileHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -155,14 +158,29 @@ Security::salt(Configure::consume('Security.salt'));
 
 // Monolog設定
 Log::config('default', function () {
-    $loggingPath = LOGS . DS . 'debug.log';
-    $log = new Logger('app');
+    $log = new Logger('App');
+    $output = "[%datetime%] %level_name% : %context% %message%\n";
+    $formatter = new LineFormatter($output);
 
-    $output = "[%datetime%] %level_name% : %message% %context% %extra%\n";
-    $formatter = new LineFormatter($output, 'Y/m/d H:i:s');
-    $stream = new StreamHandler($loggingPath, Logger::DEBUG);
-    $stream->setFormatter($formatter);
-    $log->pushHandler($stream);
+    // debugログ
+    if (Configure::read('debug')) {
+        $debugLog = LOGS . DS . 'debug.log';
+        $debug = new RotatingFileHandler($debugLog, 7, Logger::DEBUG);
+        $debug->setFormatter($formatter);
+        $log->pushHandler($debug);
+    }
+
+    // infoログ
+    $infoLog = LOGS . DS . 'info.log';
+    $info = new RotatingFileHandler($infoLog, 7, Logger::INFO);
+    $info->setFormatter($formatter);
+    $log->pushHandler($info);
+
+    // errorログ
+    $errorLog = LOGS . DS . 'error.log';
+    $error = new RotatingFileHandler($errorLog, 7, Logger::WARNING);
+    $error->setFormatter($formatter);
+    $log->pushHandler($error);
 
     return $log;
 });

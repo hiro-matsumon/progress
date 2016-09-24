@@ -7,7 +7,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model\Exception\MocoPersonsDBException;
-use Cake\Log\Log;
 
 /**
  * MocoPersons アプリケーション コントローラ
@@ -51,6 +50,7 @@ class MocoPersonsController extends AppController
         $this->loadComponent('PagingSupport', [
             'request' => $this->request,
         ]);
+        $this->loadComponent('AccessLog');
     }
 
     /**
