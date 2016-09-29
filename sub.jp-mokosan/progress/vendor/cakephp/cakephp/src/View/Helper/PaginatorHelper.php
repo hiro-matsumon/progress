@@ -481,9 +481,9 @@ class PaginatorHelper extends Helper
         });
         $url = array_merge($url, $options);
 
-        if (!empty($url['page']) && $url['page'] == 1) {
-            $url['page'] = false;
-        }
+//        if (!empty($url['page']) && $url['page'] == 1) {
+//            $url['page'] = false;
+//        }
         if (isset($paging['sortDefault'], $paging['directionDefault'], $url['sort'], $url['direction']) &&
             $url['sort'] === $paging['sortDefault'] &&
             $url['direction'] === $paging['directionDefault']
