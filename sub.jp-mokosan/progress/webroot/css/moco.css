@@ -109,6 +109,17 @@ table tr.list-link:hover {
 /* ============================= *
  * デザイン (ページネーション)
  * ============================= */
+@media (max-width: 767px) {
+    .pagination {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    .pagination li {
+        display: block;
+        float: left;
+    }
+}
 .pagination {
     padding: initial;
 }
@@ -153,6 +164,7 @@ table tr.list-link:hover {
 }
 .table-responsive {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 .alert-success {
     z-index: 2;
@@ -178,6 +190,5 @@ table tr.list-link:hover {
     100% {opacity: 0}
 }
 .table-responsive {
-    overflow: scroll;
     -webkit-overflow-scrolling: touch;
 }
