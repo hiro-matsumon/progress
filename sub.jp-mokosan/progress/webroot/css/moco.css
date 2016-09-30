@@ -111,7 +111,6 @@ table tr.list-link:hover {
  * ============================= */
 @media (max-width: 767px) {
     .pagination {
-        display: block;
         width: auto;
         height: auto;
     }
