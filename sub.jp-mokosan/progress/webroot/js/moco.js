@@ -25,11 +25,12 @@ $(function() {
 /* 
  * 2度押し防止
  */
-$(function() {
-    $("submit,:submit").on('click', function(e) {
-        e.preventDefault();
-        $(this).attr('disabled', 'disabled');
-        $(this).closest('form').submit();
-        return false;
+$(function () {
+    $('form').submit(function () {
+        // 押下時に[disabled]に変更するがCSSはそのまま
+        var btn = $(this).find(':submit');
+        var btnCss = btn.css(['color', 'background-color', 'border-color']);
+        btn.attr('disabled', 'disabled');
+        btn.css(btnCss);
     });
 });
