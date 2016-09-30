@@ -22,3 +22,14 @@ $(function() {
     });
 });
 
+/* 
+ * 2度押し防止
+ */
+$(function() {
+    $("submit,:submit").on('click', function(e) {
+        e.preventDefault();
+        $(this).attr('disabled', 'disabled');
+        $(this).closest('form').submit();
+        return false;
+    });
+});
