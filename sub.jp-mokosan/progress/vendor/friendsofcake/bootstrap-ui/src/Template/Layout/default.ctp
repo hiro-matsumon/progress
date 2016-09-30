@@ -93,8 +93,13 @@ $this->append('css', $html5Shim);
 // カスタマイズCSSを読込み
 $this->append('css', $this->Html->css('/css/flat-ui.css'));
 $this->append('css', $this->Html->css('/css/font-awesome.css'));
-$this->append('css', $this->Html->css('/css/logo.css'));
 $this->append('css', $this->Html->css('/css/moco.css'));
+$this->append('css', $this->Html->css('/css/alert.css'));
+$this->append('css', $this->Html->css('/css/animation.css'));
+$this->append('css', $this->Html->css('/css/list-link.css'));
+$this->append('css', $this->Html->css('/css/logo.css'));
+$this->append('css', $this->Html->css('/css/navbar.css'));
+$this->append('css', $this->Html->css('/css/pagination.css'));
 
 /**
  * Prepend `script` block with jQuery and Bootstrap scripts

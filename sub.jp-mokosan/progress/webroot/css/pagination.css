@@ -1,0 +1,30 @@
+/* ============================= *
+ * ページネーション
+ * ============================= */
+@media (max-width: 767px) {
+    .pagination {
+        width: auto;
+        height: auto;
+    }
+    .pagination li {
+        display: block;
+        float: left;
+    }
+}
+.pagination {
+    padding: initial;
+}
+.pagination li > a,
+.pagination li > span {
+    border: initial;
+    padding: 10px 20px;
+}
+.pagination li.next, .pagination li.previous {
+    position: relative;
+}
+.pagination li.previous > a {
+    border-right: initial;
+}
+.pagination > li > a {
+    margin-left: 0px;
+}

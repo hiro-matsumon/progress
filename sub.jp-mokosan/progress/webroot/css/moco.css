@@ -6,23 +6,17 @@ body {
         Verdana, Chicago, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 /* ============================= *
- * リストをリンク化
+ * レイアウト
  * ============================= */
-table tr.list-link {
-    cursor: pointer;
+.footer {
+    margin-top: 20px;
 }
-table tr.list-link:hover {
-    color: #0000dd;
-    background: #ffffcc;
+.table-responsive {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 /* ============================= *
- * アイコン付ボタン
- * ============================= */
-.i-button{
-    font-family: FontAwesome, Verdana, Chicago, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-}
-/* ============================= *
- * デザイン (全体)
+ * デザイン
  * ============================= */
 .title {
     border-bottom: 1px dotted #bdc3c7;
@@ -39,155 +33,8 @@ table tr.list-link:hover {
                  0px  1px  1px #666;
 }*/
 /* ============================= *
- * デザイン (ヘッダー)
+ * アイコン付ボタン
  * ============================= */
-.navbar {
-    border-radius: initial;
-    text-shadow: 0 -1px 0px #333, 0 1px 0px #555;
-    background-image: -moz-linear-gradient(
-        top,
-        #888 0%,
-        #777 50%,
-        #666 50%,
-        #777 100%
-    );
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #888),
-        color-stop(0.50, #777),
-        color-stop(0.50, #666),
-        color-stop(1, #777)
-    );
-}
-.navbar .navbar-collapse {
-        border-width: 1px;
-}
-.navbar .container-fluid {
-    box-shadow:  1px  0px  0px rgba(225, 225, 225, 0.3) inset,
-                -1px  0px  0px rgba(225, 225, 225, 0.3) inset,
-                 0px  1px  1px rgba(0, 0, 0, 0.1) inset,
-                 0px -1px  1px rgba(0, 0, 0, 0.3) inset,
-                 0px  1px  3px #666;
-}
-.navbar li > a {
-    background-image: -moz-linear-gradient(
-        top,
-        #888 0%,
-        #777 50%,
-        #666 50%,
-        #777 100%
-    );
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #888),
-        color-stop(0.50, #777),
-        color-stop(0.50, #666),
-        color-stop(1, #777)
-    );
-    border-left: 1px solid #444;
-    box-shadow:  1px  0px  0px rgba(225, 225, 225, 0.3) inset,
-                -1px  0px  0px rgba(225, 225, 225, 0.3) inset,
-                 0px  1px  1px rgba(0, 0, 0, 0.1) inset,
-                 0px -1px  1px rgba(0, 0, 0, 0.3) inset;
-}
-.navbar li:first-child a {
-    border-left: initial;
-    box-shadow:  1px  0px  0px rgba(225, 225, 225, 0.3) inset,
-                 0px  1px  1px rgba(0, 0, 0, 0.1) inset,
-                 0px -1px  1px rgba(0, 0, 0, 0.3) inset;
-}
-.navbar li:last-child a {
-    border-right: 1px solid #444;
-    box-shadow:  1px  0px -1px rgba(225, 225, 225, 0.3) inset,
-                 0px  1px  1px rgba(0, 0, 0, 0.1) inset,
-                 0px -1px  1px rgba(0, 0, 0, 0.3) inset;
-}
-/* ============================= *
- * デザイン (ページネーション)
- * ============================= */
-@media (max-width: 767px) {
-    .pagination {
-        width: auto;
-        height: auto;
-    }
-    .pagination li {
-        display: block;
-        float: left;
-    }
-}
-.pagination {
-    padding: initial;
-}
-.pagination li > a,
-.pagination li > span {
-    border: initial;
-    padding: 10px 20px;
-}
-.pagination li.next, .pagination li.previous {
-    position: relative;
-}
-.pagination li.previous > a {
-    border-right: initial;
-}
-.pagination > li > a {
-    margin-left: 0px;
-}
-/* ============================= *
- * レイアウト
- * ============================= */
-.navbar .container-fluid > .navbar-collapse {
-    padding-left: 12px;
-}
-.navbar-brand {
-    padding-left: 21px;
-    margin-left: 21px;
-}
-@media (min-width: 768px) {
-    .navbar > .container .navbar-brand,
-    .navbar > .container-fluid .navbar-brand {
-        margin-left: -21px;
-    }
-}
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-}
-.footer {
-    margin-top: 20px;
-}
-.table-responsive {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.alert-success {
-    z-index: 2;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-}
-/* ============================= *
- * アニメーション
- * ============================= */
-.fade.in {
-    animation: fadeInOut 5s ease 0s 1 normal;
-    -webkit-animation: fadeInOut 5s ease 0s 1 normal;
-}
-@keyframes fadeInOut {
-    0% {opacity: 0}
-    35% {opacity: 1}
-    100% {opacity: 0}
-}
-@-webkit-keyframes fadeInOut {
-    0% {opacity: 0}
-    35% {opacity: 1}
-    100% {opacity: 0}
-}
-.table-responsive {
-    -webkit-overflow-scrolling: touch;
+.i-button{
+    font-family: FontAwesome, Verdana, Chicago, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }

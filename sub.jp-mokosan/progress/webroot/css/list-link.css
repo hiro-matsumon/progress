@@ -1,0 +1,10 @@
+/* ============================= *
+ * リストをリンク化
+ * ============================= */
+table tr.list-link {
+    cursor: pointer;
+}
+table tr.list-link:hover {
+    color: #0000dd;
+    background: #ffffcc;
+}
