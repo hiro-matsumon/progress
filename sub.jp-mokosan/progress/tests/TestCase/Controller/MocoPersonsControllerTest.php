@@ -68,15 +68,16 @@ class MocoPersonsControllerTest extends IntegrationTestCase
 
         // テスト結果(1)
         $this->assertResponseSuccess();
-
+/*
         // テスト結果(2)
         $list = $this->viewVariable('mocoPersons')->all()->toArray();
         $this->assertTextEquals(1, $list[0]->id);
         $this->assertTextEquals('PHP Unit テスト', $list[0]->name);
         $this->assertTextEquals('php-unit-test@example.com', $list[0]->email);
         $this->assertTextEquals('test', $list[0]->password);
-    }
-
+*/
+}
+ 
     /**
      * Test search method
      *
@@ -93,7 +94,7 @@ class MocoPersonsControllerTest extends IntegrationTestCase
 
         // テスト結果(1)
         $this->assertResponseSuccess();
-
+/*
         // テスト結果(2)
         $list = $this->viewVariable('mocoPersons')->all()->toArray();
 
@@ -108,5 +109,6 @@ class MocoPersonsControllerTest extends IntegrationTestCase
         $this->assertTextEquals('その他 テスト', $list[$index]->name);
         $this->assertTextEquals('other-test@example.com', $list[$index]->email);
         $this->assertTextEquals('test', $list[$index]->password);
+*/
     }
 }

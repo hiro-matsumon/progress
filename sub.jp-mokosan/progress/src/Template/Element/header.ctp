@@ -8,10 +8,10 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav">
-                <li><a href="/mocoPersons/">Dashboard</a></li>
-                <li><a href="/mocoPersons/">Settings</a></li>
-                <li><a href="/mocoPersons/">Profile</a></li>
-                <li><a href="/mocoPersons/">Help</a></li>
+                <li><a href="/mocoPersons/">Top</a></li>
+                <li><a href="/mocoPersons/add">Regist</a></li>
+                <li><a href="/mocoLogins/">Login</a></li>
+                <li><a href="/mocoLogins/logout">Logout</a></li>
             </ul>
         </div>
     </div>
