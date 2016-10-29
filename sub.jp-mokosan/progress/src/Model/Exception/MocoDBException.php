@@ -11,6 +11,6 @@ use Cake\Core\Exception\Exception as CakeException;
  * MocoPersons データベース例外
  * @package Model
  */
-class MocoPersonsDBException extends CakeException
+class MocoDBException extends CakeException
 {
 }

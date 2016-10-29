@@ -6,7 +6,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use App\Model\Exception\MocoPersonsDBException;
+use App\Model\Exception\MocoDBException;
+use Cake\Event\Event;
 
 /**
  * MocoPersons アプリケーション コントローラ
@@ -80,7 +81,7 @@ class MocoPersonsController extends AppController
         }
         // データベースエラー
         if (! $result) {
-            throw new MocoPersonsDBException($this->message['addError']);
+            throw new MocoDBException($this->message['addError']);
         }
         // 成功
         $this->Flash->success($this->message['addSuccess']);
@@ -116,7 +117,7 @@ class MocoPersonsController extends AppController
         }
         // データベースエラー
         if (! $result) {
-            throw new MocoPersonsDBException($this->message['editError']);
+            throw new MocoDBException($this->message['editError']);
         }
         // 成功
         $this->Flash->success($this->message['editSuccess']);
@@ -144,7 +145,7 @@ class MocoPersonsController extends AppController
         $result = $this->MocoPersons->delete($personEntity);
         // データベースエラー
         if (! $result) {
-            throw new MocoPersonsDBException($this->message['deleteError']);
+            throw new MocoDBException($this->message['deleteError']);
         }
         // 成功
         $this->Flash->success($this->message['deleteSuccess']);
@@ -184,5 +185,19 @@ class MocoPersonsController extends AppController
         }
 
         return $this->render('index');
+    }
+
+    /**
+     * Before filter callback.
+     *
+     * @param \Cake\Event\Event $event The beforeFilter event.
+     * @return void
+     */
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        // 会員登録のみ認証なし
+        $this->Auth->allow(['add']);
     }
 }

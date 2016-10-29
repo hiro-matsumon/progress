@@ -43,6 +43,24 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => ['username' => 'email', 'password' => 'password'],
+                    'userModel' => 'MocoPersons',
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'MocoLogins',
+            ],
+            'loginRedirect' => [
+                'controller' => 'MocoPersons',
+            ],
+            'logoutRedirect' => [
+                'controller' => 'MocoLogins',
+                'action' => 'index',
+            ],
+        ]);
     }
 
     /**

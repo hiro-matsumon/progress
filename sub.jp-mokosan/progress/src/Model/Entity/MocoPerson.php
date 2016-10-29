@@ -1,6 +1,7 @@
 <?php
 namespace App\Model\Entity;
 
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -38,4 +39,17 @@ class MocoPerson extends Entity
     protected $_hidden = [
         'password'
     ];
+
+    /**
+     * パスワードをハッシュ化する.
+     *
+     * @param string $password パスワード
+     * @return string ハッシュ化されたパスワード
+     */
+    protected function _setPassword($password)
+    {
+        $hasher = new DefaultPasswordHasher();
+
+        return $hasher->hash($password);
+    }
 }

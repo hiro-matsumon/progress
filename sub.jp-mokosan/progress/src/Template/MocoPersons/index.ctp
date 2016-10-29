@@ -30,7 +30,6 @@
                 <th>No.</th>
                 <th>名前</th>
                 <th>Eメール</th>
-                <th>パスワード</th>
                 <th>登録日時</th>
                 <th>最終更新日時</th>
             </tr>
@@ -41,7 +40,6 @@
                 <td><?= $person->id ?></td>
                 <td><?= h($person->name) ?></td>
                 <td><?= h($person->email) ?></td>
-                <td><?= h($person->password) ?></td>
                 <td><?= h(date_format($person->created, 'Y/m/d H:i:s')) ?></td>
                 <td><?= h(date_format($person->modified, 'Y/m/d H:i:s')) ?></td>
             </tr>
