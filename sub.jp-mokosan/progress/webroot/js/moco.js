@@ -25,12 +25,26 @@ $(function() {
 /* 
  * 2度押し防止
  */
-$(function () {
-    $('form').submit(function () {
-        // 押下時に[disabled]に変更するがCSSはそのまま
-        var btn = $(this).find(':submit');
-        var btnCss = btn.css(['color', 'background-color', 'border-color']);
-        btn.attr('disabled', 'disabled');
-        btn.css(btnCss);
+$(function() {
+    $("submit,:submit").on('click', function(e) {
+        e.preventDefault();
+        $(this).attr('disabled', 'disabled');
+        $(this).closest('form').submit();
+        return false;
     });
 });
+
+/* 
+ * ブラウザバック対応
+ */
+var ua = navigator.userAgent.toLowerCase();
+var isSafari = (ua.indexOf('safari') > -1) && (ua.indexOf('chrome') === -1);
+if (isSafari) {
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+} else {
+    $(window).unload(function(){});
+}
